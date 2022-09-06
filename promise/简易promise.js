@@ -148,25 +148,25 @@ class MyPromise {
 }
 
 // ------------test-------------
-// const p = new MyPromise((resolve, reject) => {
-//     resolve(12)
-// })
-// p.then((res) => {
-//     console.log(res)
-//     return new MyPromise((resolve, reject) => {
-//         // reject('err')
-//         reject(111)
-//     })
-// }).finally(() => {
-//     return new MyPromise((resolve, reject) => {
-//         reject(666)
-//     })
-// }).then(res => {
-//     console.log(res)
-// }, err => {
-//     console.log('777' + err)
-//     return 1
-// })
+const p = new MyPromise((resolve, reject) => {
+    resolve(12)
+})
+p.then((res) => {
+    console.log(res)
+    return new MyPromise((resolve, reject) => {
+        // reject('err')
+        reject(111)
+    })
+}).finally(() => {
+    return new MyPromise((resolve, reject) => {
+        reject(666)
+    })
+}).then(res => {
+    console.log(res)
+}, err => {
+    console.log('777' + err)
+    return 1
+})
 
 
 
